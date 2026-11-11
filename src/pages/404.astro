@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Niet gevonden" description="Deze pagina bestaat niet.">
+  <div class="wrap leeg">
+    <p class="r-label">404</p>
+    <h1>Deze pagina bestaat niet.</h1>
+    <p>Misschien is de link oud, of zit er een typfout in het adres.</p>
+    <a class="r-btn r-btn--primary" href="/">Naar de voorpagina</a>
+  </div>
+</Base>
+
+<style>
+  .leeg { padding-top: clamp(48px, 10vw, 120px); display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+  h1 { font: 720 2.5rem/1.08 var(--font-display); font-stretch: 112%; letter-spacing: -.028em; }
+  p:not(.r-label) { color: var(--ink-muted); margin-bottom: var(--space-4); }
+</style>

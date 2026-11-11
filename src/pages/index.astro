@@ -1,0 +1,69 @@
+---
+// Tijdelijke single pager: wie, wat, ervaring, contact. Geen werk of cases.
+import { Image } from 'astro:assets';
+import portret from '../assets/portret.jpg';
+import Base from '../layouts/Base.astro';
+import Ervaring from '../components/Ervaring.astro';
+import Achtergrond from '../components/Achtergrond.astro';
+import Werkwijze from '../components/Werkwijze.astro';
+import { site } from '../data/site';
+---
+<Base>
+  <div class="wrap hero">
+    <div class="hero__tekst">
+      <p class="r-label">Productontwerper bij {site.employer.name}</p>
+      <h1>{site.name.split(' ').map((woord) => <span>{woord} </span>)}</h1>
+      <p class="intro">{site.intro}</p>
+      <div class="actions">
+        <a class="r-btn r-btn--primary" href="#ervaring">Bekijk ervaring</a>
+        <a class="r-btn r-btn--ghost" href={site.linkedin.url} rel="me noopener">LinkedIn <span class="arrow arrow--out" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="portret">
+      <Image src={portret} alt={`Portret van ${site.name}`} widths={[240, 360, 480]} sizes="(max-width: 900px) 320px, 420px" loading="eager" fetchpriority="high" />
+    </div>
+  </div>
+
+  <section class="wrap sec" id="over" aria-labelledby="over-kop">
+    <div class="about">
+      <div>
+        <p class="r-label">Over</p>
+        <h2 class="kop" id="over-kop">Minder, maar beter — ook in software.</h2>
+        <p class="tekst">Ik werk aan meerdere producten tegelijk: van onderzoek en strategie tot klikbare prototypes. Soms coach ik teams in hoe ze samen beter bouwen.</p>
+        <p class="tekst">Ik maak de toekomst tastbaar voordat die er is, en ontdek door te testen met gebruikers wat werkt en wat niet.</p>
+      </div>
+      <dl class="numbers">
+        {site.cijfers.map((c) => <div><dd>{c.waarde}</dd><dt class="r-label">{c.label}</dt></div>)}
+      </dl>
+    </div>
+  </section>
+
+  <Werkwijze />
+  <Ervaring />
+  <Achtergrond />
+</Base>
+
+<style>
+  .hero { padding-top: clamp(40px, 7vw, 96px); display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: clamp(32px, 6vw, 96px); }
+  h1 { font: 760 clamp(3.25rem, 1.4rem + 7.4vw, 6.5rem)/.95 var(--font-display); font-stretch: 118%; letter-spacing: -.035em; margin: var(--space-4) 0 28px; }
+  h1 span { display: block; }
+  .intro { font: 400 1.25rem/1.5 var(--font-sans); color: var(--ink-muted); max-width: 520px; margin-bottom: 32px; }
+  .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+
+  .portret { justify-self: end; width: 100%; max-width: 420px; aspect-ratio: 1; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-200); }
+  .portret :global(img) { width: 100%; height: 100%; object-fit: cover; }
+
+  .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: end; }
+  .kop { font: 680 clamp(1.875rem, 1.3rem + 2vw, 2.5rem)/1.12 var(--font-display); font-stretch: 108%; letter-spacing: -.022em; margin: 12px 0 20px; }
+  .tekst { font: 400 1.125rem/1.56 var(--font-sans); color: var(--ink-muted); max-width: 32em; }
+  .tekst + .tekst { margin-top: var(--space-4); }
+  .numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+  .numbers div { border-top: var(--hairline) solid var(--line-strong); padding-top: 14px; display: flex; flex-direction: column; }
+  .numbers dd { font: 720 clamp(2.25rem, 1.6rem + 2vw, 3rem)/1.05 var(--font-display); font-stretch: 108%; letter-spacing: -.03em; margin-bottom: 6px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; align-items: start; gap: 40px; }
+    .portret { justify-self: start; max-width: 320px; }
+    .about { grid-template-columns: 1fr; align-items: start; }
+  }
+</style>

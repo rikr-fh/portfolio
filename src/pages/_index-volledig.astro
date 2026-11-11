@@ -1,0 +1,81 @@
+---
+// Volledige voorpagina (met werk en cases). Staat opzij zolang `site.tijdelijk` aan staat;
+// hernoem naar `index.astro` om hem weer te gebruiken.
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site } from '../data/site';
+
+const cases = (await getCollection('werk')).sort((a, b) => a.data.nr.localeCompare(b.data.nr));
+const uitgelicht = cases.find((c) => c.data.uitgelicht) ?? cases[0];
+const overige = cases.filter((c) => c !== uitgelicht);
+---
+<Base>
+  <div class="wrap hero">
+    <div>
+      <p class="r-label">Productontwerper bij {site.employer.name}</p>
+      <h1>{site.name.split(' ').map((woord) => <span>{woord} </span>)}</h1>
+      <p class="intro">{site.intro}</p>
+      <div class="actions">
+        <a class="r-btn r-btn--primary" href="#werk">Bekijk werk</a>
+        <a class="r-btn r-btn--ghost" href="/over/">Over mij <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <dl class="spec">
+      {site.facts.map((f) => <div><dt class="r-label">{f.label}</dt><dd>{f.value}</dd></div>)}
+    </dl>
+  </div>
+
+  <section class="wrap sec" id="werk" aria-labelledby="werk-kop">
+    <h2 class="sec-kop" id="werk-kop">Geselecteerd werk</h2>
+    <ProjectCard entry={uitgelicht} featured />
+    <div class="grid3">
+      {overige.map((entry) => <ProjectCard entry={entry} />)}
+    </div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="over-kop">
+    <div class="about">
+      <div>
+        <p class="r-label">Over</p>
+        <h2 class="kop" id="over-kop">Minder, maar beter — ook in software.</h2>
+        <p class="tekst">Ik werk aan meerdere producten tegelijk: van onderzoek en strategie tot klikbare prototypes. Soms coach ik teams in hoe ze samen beter bouwen.</p>
+        <a class="r-btn r-btn--secondary" href="/over/">Lees meer over mij</a>
+      </div>
+      <dl class="numbers">
+        {site.cijfers.map((c) => <div><dd>{c.waarde}</dd><dt class="r-label">{c.label}</dt></div>)}
+      </dl>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(8px, 2vw, 24px); display: grid; grid-template-columns: 1.4fr 1fr; align-items: end; gap: var(--space-12); }
+  h1 { font: 760 clamp(3.25rem, 1.4rem + 7.4vw, 6.5rem)/.95 var(--font-display); font-stretch: 118%; letter-spacing: -.035em; margin: var(--space-4) 0 28px; }
+  h1 span { display: block; }
+  .intro { font: 400 1.25rem/1.5 var(--font-sans); color: var(--ink-muted); max-width: 520px; margin-bottom: 32px; }
+  .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+
+  .spec { width: 100%; max-width: 340px; justify-self: end; border-top: var(--hairline) solid var(--line-strong); }
+  .spec div { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); padding: 12px 0; border-bottom: var(--hairline) solid var(--line); }
+  .spec dd { font: 400 0.9375rem/1.4 var(--font-sans); text-align: right; }
+
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px; margin-top: 64px; }
+
+  .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: end; }
+  .kop { font: 680 clamp(1.875rem, 1.3rem + 2vw, 2.5rem)/1.12 var(--font-display); font-stretch: 108%; letter-spacing: -.022em; margin: 12px 0 20px; }
+  .tekst { font: 400 1.125rem/1.56 var(--font-sans); color: var(--ink-muted); margin-bottom: var(--space-6); max-width: 32em; }
+  .numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+  .numbers div { border-top: var(--hairline) solid var(--line-strong); padding-top: 14px; display: flex; flex-direction: column; }
+  .numbers dd { font: 720 clamp(2.25rem, 1.6rem + 2vw, 3rem)/1.05 var(--font-display); font-stretch: 108%; letter-spacing: -.03em; margin-bottom: 6px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; }
+    .spec { justify-self: start; max-width: 400px; }
+    .grid3 { grid-template-columns: repeat(2, 1fr); margin-top: 48px; }
+    .about { grid-template-columns: 1fr; align-items: start; }
+  }
+  @media (max-width: 560px) {
+    .grid3 { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>

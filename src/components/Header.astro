@@ -1,0 +1,46 @@
+---
+// Nav: naam, twee links, LinkedIn. Signaalstip op de huidige pagina (volledige site).
+import { site } from '../data/site';
+
+interface Props { section?: 'werk' | 'over'; }
+const { section } = Astro.props;
+const links = site.tijdelijk
+  ? [
+      { label: 'Over', href: '/#over', current: undefined },
+      { label: 'Ervaring', href: '/#ervaring', current: undefined },
+    ]
+  : [
+      { label: 'Werk', href: '/#werk', current: section === 'werk' ? 'true' : undefined },
+      { label: 'Over', href: '/over/', current: section === 'over' ? 'page' : undefined },
+    ];
+---
+<header class="r-nav-root">
+  <nav class="wrap r-nav" aria-label="Hoofdmenu">
+    <a class="r-nav__brand" href="/">{site.name}</a>
+    <ul class="r-nav__links">
+      {links.map((l) => <li><a class="r-nav__link" href={l.href} aria-current={l.current}>{l.label}</a></li>)}
+    </ul>
+    <div class="r-nav__end">
+      <a class="r-btn r-btn--secondary r-btn--sm" href={site.linkedin.url} rel="me noopener">LinkedIn <span class="arrow arrow--out" aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .r-nav-root { position: sticky; top: 0; z-index: 5; background: var(--surface-100); border-bottom: var(--hairline) solid var(--line); }
+  .r-nav { display: flex; align-items: center; gap: var(--space-6); min-height: var(--nav); }
+  .r-nav__brand { display: inline-flex; align-items: center; min-height: 44px; margin-right: auto; font: 700 1.125rem/1 var(--font-display); font-stretch: 108%; letter-spacing: -.01em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .r-nav__links { display: flex; align-items: center; gap: clamp(20px, 3vw, 32px); list-style: none; margin: 0; padding: 0; }
+  .r-nav__link {
+    display: inline-flex; align-items: center; gap: var(--space-2); padding: 12px 0;
+    font: 500 0.9375rem/1.2 var(--font-sans); color: var(--ink-muted); text-decoration: none; transition: color .2s var(--ease);
+  }
+  .r-nav__link:hover, .r-nav__link[aria-current] { color: var(--ink); }
+  .r-nav__link[aria-current]::before { content: ""; width: 6px; height: 6px; border-radius: var(--radius-pill); background: var(--signal); }
+  .r-nav__end { display: flex; align-items: center; }
+
+  @media (max-width: 640px) {
+    .r-nav { --nav: 64px; }
+    .r-nav__end { display: none; }
+  }
+</style>

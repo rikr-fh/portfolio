@@ -1,0 +1,51 @@
+/* Rik — tokens. Richting A (Braun): warm grijs, veel lucht, haarlijnen. Vriendelijk en duidelijk, niet technisch. Eén thema: licht.
+   Bron: design system "Rik" + homepage-richting A. Componenten gebruiken alleen variabelen. */
+:root {
+  color-scheme: light;
+
+  /* Kleur */
+  --surface-000: #fbfaf6; /* panelen */
+  --surface-100: #f1efe8; /* grond */
+  --surface-200: #e3e0d7; /* verzonken vlak, tags */
+  --graphite: #2b2a27;    /* één donker blok per pagina */
+  --line: #d8d5cc;
+  --line-strong: #8a877e;
+  --ink: #1d1d1b;
+  --ink-muted: #5f5d56;
+  --signal: #e05a24;      /* alleen vlakken en stippen, nooit tekst */
+  --signal-ink: #a8410f;  /* oranje als tekst */
+  --highlight: #e9c46a;
+  --graphite-line: #4a4944;
+  --on-graphite: #efeee9;
+  --on-graphite-muted: #a8a69f;
+
+  /* Typografie */
+  /* Archivo (variabel, met breedte-as) voor koppen en cijfers; IBM Plex Sans voor tekst en labels. Geen mono. */
+  --font-display: "Archivo Variable", "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Ruimte: 4px-raster */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-12: 48px;
+  --space-24: 96px;
+
+  /* Vorm */
+  --radius-0: 0;
+  --radius-sm: 4px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+
+  --hairline: 1px;
+
+  /* Beweging */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+
+  /* Layout */
+  --page: 1280px;
+  --gutter: clamp(16px, 5vw, 64px);
+  --section: clamp(56px, 8vw, 96px);
+  --nav: 72px;
+}

@@ -1,0 +1,37 @@
+---
+// Het ene donkere blok per pagina: contact via LinkedIn, plus de colofonregel.
+import { site } from '../data/site';
+const jaar = new Date().getFullYear();
+---
+<footer class="wrap foot-wrap" aria-labelledby="contact-kop">
+  <div class="foot">
+    <div>
+      <span class="r-label">Contact</span>
+      <h2 id="contact-kop">Een bericht sturen kan via LinkedIn.</h2>
+    </div>
+    <a class="r-btn r-btn--secondary" href={site.linkedin.url} rel="me noopener">LinkedIn {site.linkedin.label} <span class="arrow arrow--out" aria-hidden="true">↗</span></a>
+    <div class="meta">
+      <span class="r-label">© {jaar} {site.name}</span>
+      <span class="r-label">Werkt bij <a href={site.employer.url} rel="noopener">{site.employer.name}</a>, {site.employer.place}</span>
+      <span class="r-label">Geen cookies, geen tracking</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .foot-wrap { padding-top: var(--section); padding-bottom: clamp(16px, 5vw, 64px); }
+  .foot { background: var(--graphite); border-radius: var(--radius-md); padding: clamp(24px, 4.5vw, 56px); display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; }
+  .foot .r-label { color: var(--on-graphite-muted); }
+  h2 { font: 720 clamp(2rem, 1.2rem + 3.2vw, 3.5rem)/1.05 var(--font-display); font-stretch: 112%; letter-spacing: -.028em; margin-top: var(--space-4); color: var(--on-graphite); max-width: 13ch; }
+  .r-btn--secondary { background: transparent; color: var(--on-graphite); border-color: var(--line-strong); }
+  .r-btn--secondary:hover { border-color: var(--on-graphite); }
+  .foot :focus-visible { outline-color: var(--on-graphite); }
+  .meta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px var(--space-6); padding-top: var(--space-6); border-top: var(--hairline) solid var(--graphite-line); }
+  .meta a { color: inherit; text-underline-offset: 3px; }
+  .meta a:hover { color: var(--on-graphite); }
+
+  @media (max-width: 760px) {
+    .foot { grid-template-columns: 1fr; justify-items: start; }
+    .meta { flex-direction: column; }
+  }
+</style>
