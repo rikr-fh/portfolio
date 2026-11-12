@@ -19,7 +19,7 @@ layout: home
 # 1. BOVENAAN ─────────────────────────────────────────────────
 intro:
   label: Senior product designer bij Freshheads
-  tekst: Ik maak digitale producten eenvoudig. En geruststellend op de momenten dat het spannend wordt.
+  tekst: Ik ontwerp digitale producten en diensten die echte problemen oplossen.
   knop: Verbind op LinkedIn
   link: Bekijk ervaring
   bewijs: Eerder werkte ik bij Philips Design, Trifork en Mirabeau. Mijn werk is bekroond met onder meer een Red Dot en iF Design Award.
