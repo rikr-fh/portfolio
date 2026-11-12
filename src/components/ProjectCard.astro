@@ -1,4 +1,5 @@
 ---
+import Pijl from './Pijl.astro';
 // Projectkaart. Standaard voor het raster; `featured` als breed paneel, één keer per pagina.
 import type { CollectionEntry } from 'astro:content';
 
@@ -10,7 +11,7 @@ const d = entry.data;
   <div class="r-card__media"><div class="r-card__placeholder"><span class="r-label">Beeld volgt</span></div></div>
   <div class="r-card__body">
     <div class="r-card__meta"><span class="r-label">{d.domein}</span><span class="r-label">{d.jaar}</span></div>
-    <h3 class="r-card__title">{d.titel}<span class="arrow" aria-hidden="true">→</span></h3>
+    <h3 class="r-card__title">{d.titel}<Pijl /></h3>
     <p class="r-card__text">{d.samenvatting}</p>
     <div class="r-card__tags">{featured && <span class="r-tag r-tag--highlight">Uitgelicht</span>}{d.categorieen.map((c) => <span class="r-tag">{c}</span>)}</div>
   </div>

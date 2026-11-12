@@ -8,10 +8,12 @@ export const site = {
   name: 'Rik Runge',
   role: 'productontwerper',
   description:
-    'Rik Runge, productontwerper bij Freshheads. Ik ontwerp digitale producten die eenvoudig zijn — en geruststellend waar het spannend wordt.',
+    'Rik Runge, productontwerper bij Freshheads. Ik maak digitale producten eenvoudig. En geruststellend op de momenten dat het spannend wordt.',
   linkedin: { url: 'https://www.linkedin.com/in/rikrunge/', label: '/in/rikrunge' },
   employer: { name: 'Freshheads', place: 'Tilburg', url: 'https://www.freshheads.com/' },
-  intro: 'Ik maak digitale producten eenvoudig — en geruststellend op de momenten dat het spannend wordt.',
+  intro: 'Ik maak digitale producten eenvoudig. En geruststellend op de momenten dat het spannend wordt.',
+  // Eén regel bewijs bovenaan de pagina.
+  bewijs: 'Eerder bij Philips Design, Trifork en Mirabeau. Red\u00a0Dot en iF\u00a0Design\u00a0Award.',
   facts: [
     { label: 'Rol', value: 'Senior product designer' },
     { label: 'Werkt bij', value: 'Freshheads, Tilburg' },

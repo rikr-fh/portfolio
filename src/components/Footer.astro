@@ -1,4 +1,5 @@
 ---
+import Pijl from './Pijl.astro';
 // Het ene donkere blok per pagina: contact via LinkedIn, plus de colofonregel.
 import { site } from '../data/site';
 const jaar = new Date().getFullYear();
@@ -9,7 +10,7 @@ const jaar = new Date().getFullYear();
       <span class="r-label">Contact</span>
       <h2 id="contact-kop">Een bericht sturen kan via LinkedIn.</h2>
     </div>
-    <a class="r-btn r-btn--secondary" href={site.linkedin.url} rel="me noopener">LinkedIn {site.linkedin.label} <span class="arrow arrow--out" aria-hidden="true">↗</span></a>
+    <a class="r-btn r-btn--secondary" href={site.linkedin.url} rel="me noopener">LinkedIn {site.linkedin.label} <Pijl richting="uit" /></a>
     <div class="meta">
       <span class="r-label">© {jaar} {site.name}</span>
       <span class="r-label">Werkt bij <a href={site.employer.url} rel="noopener">{site.employer.name}</a>, {site.employer.place}</span>

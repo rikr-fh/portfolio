@@ -1,4 +1,5 @@
 ---
+import Pijl from '../components/Pijl.astro';
 // Tijdelijke single pager: wie, wat, ervaring, contact. Geen werk of cases.
 import { Image } from 'astro:assets';
 import portret from '../assets/portret.jpg';
@@ -15,9 +16,10 @@ import { site } from '../data/site';
       <h1>{site.name.split(' ').map((woord) => <span>{woord} </span>)}</h1>
       <p class="intro">{site.intro}</p>
       <div class="actions">
-        <a class="r-btn r-btn--primary" href="#ervaring">Bekijk ervaring</a>
-        <a class="r-btn r-btn--ghost" href={site.linkedin.url} rel="me noopener">LinkedIn <span class="arrow arrow--out" aria-hidden="true">↗</span></a>
+        <a class="r-btn r-btn--primary" href={site.linkedin.url} rel="me noopener">Verbind op LinkedIn <Pijl richting="uit" /></a>
+        <a class="r-btn r-btn--ghost" href="#ervaring">Bekijk ervaring</a>
       </div>
+      <p class="bewijs">{site.bewijs}</p>
     </div>
     <div class="portret">
       <Image src={portret} alt={`Portret van ${site.name}`} widths={[240, 360, 480]} sizes="(max-width: 900px) 320px, 420px" loading="eager" fetchpriority="high" />
@@ -49,6 +51,7 @@ import { site } from '../data/site';
   h1 span { display: block; }
   .intro { font: 400 1.25rem/1.5 var(--font-sans); color: var(--ink-muted); max-width: 520px; margin-bottom: 32px; }
   .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+  .bewijs { margin-top: var(--space-6); padding-top: var(--space-4); border-top: var(--hairline) solid var(--line); max-width: 520px; font: 500 0.875rem/1.43 var(--font-sans); color: var(--ink-muted); }
 
   .portret { justify-self: end; width: 100%; max-width: 420px; aspect-ratio: 1; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-200); }
   .portret :global(img) { width: 100%; height: 100%; object-fit: cover; }

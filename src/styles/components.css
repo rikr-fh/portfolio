@@ -22,6 +22,7 @@
 .r-btn--sm { min-height: 36px; padding: 0 16px; font-size: 0.875rem; position: relative; }
 /* Raakvlak 44px hoog zonder de knop groter te tekenen */
 .r-btn--sm::after { content: ""; position: absolute; inset: -4px 0; }
+.pijl { display: inline-block; flex: none; width: 1.05em; height: 1.05em; vertical-align: -0.15em; }
 .r-btn .arrow { display: inline-block; transition: transform .2s var(--ease); }
 .r-btn:hover .arrow { transform: translateX(4px); }
 .r-btn:hover .arrow--out { transform: translate(2px, -2px); }

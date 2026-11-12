@@ -63,9 +63,9 @@ export const achtergrond = [
   {
     label: 'Octrooien',
     items: [
-      'Protocol based replacement of UI elements using AR — Philips, 2021',
-      'Patient positioning in diagnostic imaging — Philips, 2019',
-      'Apparatus for implementing a clinical protocol — Philips, 2019',
+      'Protocol based replacement of UI elements using AR (Philips, 2021)',
+      'Patient positioning in diagnostic imaging (Philips, 2019)',
+      'Apparatus for implementing a clinical protocol (Philips, 2019)',
     ],
   },
   {

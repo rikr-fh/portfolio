@@ -1,4 +1,5 @@
 ---
+import Pijl from './Pijl.astro';
 // Nav: naam, twee links, LinkedIn. Signaalstip op de huidige pagina (volledige site).
 import { site } from '../data/site';
 
@@ -21,7 +22,7 @@ const links = site.tijdelijk
       {links.map((l) => <li><a class="r-nav__link" href={l.href} aria-current={l.current}>{l.label}</a></li>)}
     </ul>
     <div class="r-nav__end">
-      <a class="r-btn r-btn--secondary r-btn--sm" href={site.linkedin.url} rel="me noopener">LinkedIn <span class="arrow arrow--out" aria-hidden="true">↗</span></a>
+      <a class="r-btn r-btn--secondary r-btn--sm" href={site.linkedin.url} rel="me noopener">LinkedIn <Pijl richting="uit" /></a>
     </div>
   </nav>
 </header>
