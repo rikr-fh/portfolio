@@ -22,7 +22,7 @@ export const site = {
   ],
   // Prijzen en octrooien komen uit cv en LinkedIn. "12+" komt uit de mock-up; cv wijst op meer (in het vak sinds 2007).
   cijfers: [
-    { waarde: '12+', label: 'Jaar ervaring' },
+    { waarde: '20', label: 'Jaar ervaring' },
     { waarde: '6', label: 'Designprijzen' },
     { waarde: '3', label: 'Octrooien' },
   ],

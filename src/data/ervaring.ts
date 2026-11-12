@@ -10,11 +10,11 @@ export interface Ervaring {
 
 export const ervaring: Ervaring[] = [
   {
-    periode: '2023 — heden',
-    rol: 'Productontwerper',
+    periode: '2023 tot nu',
+    rol: 'Senior product designer',
     organisatie: 'Freshheads, Tilburg',
     tekst:
-      'Ik werk aan meerdere producten tegelijk: van onderzoek en strategie tot klikbare prototypes. Soms coach ik teams in hoe ze samen beter bouwen.',
+      'Productstrategie, UX/UI design en ontwikkelen van interactieve prototypes voor onder meer Quiet, GGZ Standaarden en Roan.',
   },
   {
     periode: '2018 — 2023',
@@ -25,10 +25,10 @@ export const ervaring: Ervaring[] = [
   },
   {
     periode: '2013 — 2018',
-    rol: 'Design (UX) consultant',
+    rol: 'Interaction design consultant',
     organisatie: 'Philips Design, Eindhoven',
     tekst:
-      'Software voor medische beeldvorming eenvoudiger gemaakt, met teams over de hele wereld: röntgen, CT, mammografie en echografie. De DigitalDiagnost C90 won onder meer een Red Dot en een iF Design Award.',
+      'Ontwerpen van digitale interfaces voor medische systemen. De DigitalDiagnost C90 won de Red Dot, iF, UX Design en Muse Platinum Awards. Mede-uitvinder van drie patenten.',
   },
   {
     periode: '2011 — 2013',
@@ -68,8 +68,5 @@ export const achtergrond = [
       'Apparatus for implementing a clinical protocol (Philips, 2019)',
     ],
   },
-  {
-    label: 'Daarnaast',
-    items: ['Mede-oprichter van buurttuin Groene Oase in Tilburg, sinds 2020'],
-  },
+
 ];
