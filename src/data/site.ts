@@ -6,14 +6,14 @@ export const site = {
   // `_index-volledig.astro` → `index.astro`, `_over.astro` → `over.astro`, `_werk` → `werk`.
   tijdelijk: true,
   name: 'Rik Runge',
-  role: 'productontwerper',
+  role: 'Senior product designer',
   description:
-    'Rik Runge, productontwerper bij Freshheads. Ik maak digitale producten eenvoudig. En geruststellend op de momenten dat het spannend wordt.',
+    'Rik Runge, senior product designer bij Freshheads. Ik maak digitale producten eenvoudig. En geruststellend op de momenten dat het spannend wordt.',
   linkedin: { url: 'https://www.linkedin.com/in/rikrunge/', label: '/in/rikrunge' },
   employer: { name: 'Freshheads', place: 'Tilburg', url: 'https://www.freshheads.com/' },
   intro: 'Ik maak digitale producten eenvoudig. En geruststellend op de momenten dat het spannend wordt.',
   // Eén regel bewijs bovenaan de pagina.
-  bewijs: 'Eerder bij Philips Design, Trifork en Mirabeau. Red\u00a0Dot en iF\u00a0Design\u00a0Award.',
+  bewijs: 'Eerder werkte ik bij Philips Design, Trifork en Mirabeau. Mijn werk is bekroond met onder meer een Red\u00a0Dot en iF\u00a0Design\u00a0Award.',
   facts: [
     { label: 'Rol', value: 'Senior product designer' },
     { label: 'Werkt bij', value: 'Freshheads, Tilburg' },
@@ -27,7 +27,7 @@ export const site = {
     { waarde: '3', label: 'Octrooien' },
   ],
   werkwijze: [
-    { label: 'Wat ik doe', items: ['Productstrategie', 'UX- en interactieontwerp', 'Prototypes die je kunt testen'] },
+    { label: 'Wat ik doe', items: ['Productstrategie', 'UX- en interactieontwerp', 'Testbare interactieve prototypes'] },
     { label: 'Hoe ik werk', items: ['Kort cyclisch, met het team', 'Eerst begrijpen, dan tekenen', 'Soms als coach van agile teams'] },
     { label: 'Waar ik op let', items: ['Zo min mogelijk stappen', 'Vooraf zeggen wat er gebeurt', 'Achteraf bevestigen dat het lukte'] },
   ],
