@@ -1,4 +1,4 @@
-# rikrunge.nl
+# rikrunge.nl 
 
 Persoonlijke site van Rik Runge. Gebouwd met Jekyll; GitHub Pages maakt er automatisch een website van.
 
