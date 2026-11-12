@@ -18,7 +18,7 @@ layout: home
 
 # 1. BOVENAAN ─────────────────────────────────────────────────
 intro:
-  label: Senior product designer
+  label: Senior product designer bij Freshheads
   tekst: Ik ontwerp digitale producten en diensten die echte problemen oplossen.
   knop: Verbind op LinkedIn
   link: Bekijk ervaring
@@ -56,9 +56,9 @@ werkwijze:
       - Resultaatgedreven
   - kop: Waar ik op inzet
     punten:
-      - Ontdekken van de vraag achter de vraag
-      - Het speelveld van 
-      - Vooraf zeggen wat er gebeurt
+      - De vraag achter de vraag
+      - Toegankelijkheid
+      - Gebruiksgemak
 
 
 # 4. ERVARING (nieuwste bovenaan) ─────────────────────────────
@@ -112,5 +112,5 @@ achtergrond:
 # 6. CONTACT (donker blok onderaan) ───────────────────────────
 contact:
   label: Contact
-  kop: Een bericht sturen kan via LinkedIn.
+  kop: Tijd voor een praatje?
 ---
