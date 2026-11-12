@@ -18,7 +18,7 @@ layout: home
 
 # 1. BOVENAAN ─────────────────────────────────────────────────
 intro:
-  label: Senior product designer bij Freshheads
+  label: Product designer bij Freshheads
   tekst: Ik ontwerp digitale producten en diensten die echte problemen oplossen.
   knop: Verbind op LinkedIn
   link: Bekijk ervaring
