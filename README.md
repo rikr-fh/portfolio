@@ -1,30 +1,24 @@
 # rikrunge.nl
 
-Persoonlijke site van Rik Runge. Statische site met [Astro](https://astro.build), live via GitHub Pages op [www.rikrunge.nl](https://www.rikrunge.nl).
+Persoonlijke site van Rik Runge. Gebouwd met Jekyll; GitHub Pages maakt er automatisch een website van.
 
 ## Teksten aanpassen
 
 | Wat | Bestand |
 | --- | --- |
-| Intro, functietitel, cijfers, werkwijze, omschrijving voor zoekmachines | `src/data/site.ts` |
-| Ervaring en achtergrond | `src/data/ervaring.ts` |
-| Over-tekst en knoppen op de voorpagina | `src/pages/index.astro` |
-| Contactblok en footer | `src/components/Footer.astro` |
-| Portret | `src/assets/portret.jpg` (vervangen met dezelfde naam) |
+| Alle teksten van de homepage, van boven naar beneden | `index.md` |
+| Naam, rol, LinkedIn, werkgever, voettekst, omschrijving voor Google | `_config.yml` |
+| Tekst van de foutpagina | `404.md` |
+| Portret | `assets/img/portret.jpg` (vervangen met dezelfde naam) |
 
-## Lokaal bekijken
+Open het bestand op GitHub, klik op het potlood, pas de tekst achter de dubbele punt aan en klik op **Commit changes**. Na een minuut of twee staat de wijziging live.
 
-```bash
-npm install
-npm run dev
-```
+Laat de spaties vooraan een regel staan; die bepalen de opbouw.
 
-Daarna open je http://localhost:4321.
+## Overige bestanden
 
-## Live zetten
-
-Elke push naar `main` bouwt en publiceert de site via `.github/workflows/deploy.yml`.
-
-## Tijdelijke single pager
-
-Nu staat alleen de voorpagina live. De volledige site met werk en cases staat opzij in `src/pages/_index-volledig.astro`, `src/pages/_over.astro` en `src/pages/_werk/`. Terugzetten: zet `tijdelijk` op `false` in `src/data/site.ts` en haal de liggende streep weg uit die drie namen (`_index-volledig.astro` wordt `index.astro`).
+- `_layouts/` en `_includes/`: de opbouw van de pagina's (HTML)
+- `assets/css/site.css`: kleuren, lettertypes en maten
+- `assets/js/accordeon.js`: het uitklappen van Ervaring en Achtergrond op mobiel
+- `assets/fonts/`: Archivo en IBM Plex Sans
+- `assets/img/og.png`: de afbeelding bij een gedeelde link

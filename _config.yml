@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────────
+# Instellingen en vaste gegevens van de hele site.
+# De teksten van de homepage staan in index.md.
+# Pas de tekst achter de dubbele punt aan en laat de inspringing staan.
+# ─────────────────────────────────────────────────────────────
+
+title: Rik Runge
+description: Rik Runge, senior product designer bij Freshheads. Ik maak digitale producten eenvoudig. En geruststellend op de momenten dat het spannend wordt.
+lang: nl
+
+# Naam en rol (bovenaan in de menubalk en in de tabtitel)
+naam: Rik Runge
+rol: Senior product designer
+
+# Werkgever (in de voettekst)
+werkgever: Freshheads
+werkgever_plaats: Tilburg
+werkgever_link: https://www.freshheads.com/
+
+# LinkedIn (knoppen en voettekst)
+linkedin: https://www.linkedin.com/in/rikrunge/
+linkedin_label: /in/rikrunge
+
+# Regel in de voettekst
+voettekst: Geen cookies, geen tracking
+
+# ── Technisch, normaal niet aanpassen ──────────────────────
+url: https://www.rikrunge.nl
+baseurl: ""
+exclude:
+  - README.md

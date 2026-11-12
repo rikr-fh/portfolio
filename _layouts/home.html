@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  {%- include head.html %}
+  <body>
+    {%- include header.html %}
+    {%- comment -%}
+      Opbouw van de homepage. De teksten staan in index.md, niet hier.
+    {%- endcomment -%}
+    <main id="inhoud">
+
+      <section class="wrap intro">
+        <div>
+          <p class="label">{{ page.intro.label }}</p>
+          <h1 class="naam">{% assign woorden = site.naam | split: ' ' %}{% for woord in woorden %}<span>{{ woord }}</span> {% endfor %}</h1>
+          <p class="intro__tekst">{{ page.intro.tekst }}</p>
+          <div class="acties">
+            <a class="knop knop--eerste" href="{{ site.linkedin }}" rel="me noopener">{{ page.intro.knop }} {% include pijl.html richting="uit" %}</a>
+            <a class="knop knop--link" href="#ervaring">{{ page.intro.link }}</a>
+          </div>
+          {%- if page.intro.bewijs %}
+          <p class="intro__bewijs">{{ page.intro.bewijs }}</p>
+          {%- endif %}
+        </div>
+        {%- if page.intro.foto %}
+        <div class="intro__foto">
+          <img src="{{ page.intro.foto | relative_url }}" alt="{{ page.intro.foto_alt }}" width="480" height="480" fetchpriority="high">
+        </div>
+        {%- endif %}
+      </section>
+
+      <section class="wrap sectie over" id="over" aria-labelledby="over-kop">
+        <div>
+          <p class="label">{{ page.over.label }}</p>
+          <h2 class="kop-midden" id="over-kop">{{ page.over.kop }}</h2>
+          {%- for alinea in page.over.alineas %}
+          <p class="tekst">{{ alinea }}</p>
+          {%- endfor %}
+        </div>
+        {%- if page.over.cijfers %}
+        <dl class="cijfers">
+          {%- for cijfer in page.over.cijfers %}
+          <div><dd>{{ cijfer.getal }}</dd><dt class="label">{{ cijfer.tekst }}</dt></div>
+          {%- endfor %}
+        </dl>
+        {%- endif %}
+      </section>
+
+      {%- if page.werkwijze %}
+      <section class="wrap sectie kolommen kolommen--3" aria-label="Werkwijze">
+        {%- for kolom in page.werkwijze %}
+        <div class="kolom">
+          <h2 class="kop-klein">{{ kolom.kop }}</h2>
+          <ul>{% for punt in kolom.punten %}<li>{{ punt }}</li>{% endfor %}</ul>
+        </div>
+        {%- endfor %}
+      </section>
+      {%- endif %}
+
+      <section class="wrap sectie" id="ervaring" aria-labelledby="ervaring-kop">
+        <h2 class="kop-sectie" id="ervaring-kop">{{ page.ervaring_kop }}</h2>
+        <ol class="ervaring" data-accordeon="ervaring">
+          {%- for item in page.ervaring %}
+          <li>
+            <details open>
+              <summary>
+                <span class="ervaring__periode">{{ item.periode }}</span>
+                <h3 class="kop-klein">{{ item.rol }}</h3>
+                <span class="ervaring__org">{{ item.organisatie }}</span>
+                {% include klap.html %}
+              </summary>
+              <p>{{ item.tekst }}</p>
+            </details>
+          </li>
+          {%- endfor %}
+        </ol>
+      </section>
+
+      <section class="wrap sectie" aria-labelledby="achtergrond-kop">
+        <h2 class="kop-sectie" id="achtergrond-kop">{{ page.achtergrond_kop }}</h2>
+        <div class="kolommen kolommen--accordeon" data-accordeon="achtergrond">
+          {%- for kolom in page.achtergrond %}
+          <details class="kolom" open>
+            <summary><h3 class="kop-klein">{{ kolom.kop }}</h3>{% include klap.html %}</summary>
+            <ul>{% for punt in kolom.punten %}<li>{{ punt }}</li>{% endfor %}</ul>
+          </details>
+          {%- endfor %}
+        </div>
+      </section>
+
+      <section class="wrap sectie" aria-labelledby="contact-kop">
+        <div class="contact">
+          <div>
+            <p class="label">{{ page.contact.label }}</p>
+            <h2 id="contact-kop">{{ page.contact.kop }}</h2>
+          </div>
+          <a class="knop knop--tweede" href="{{ site.linkedin }}" rel="me noopener">LinkedIn {{ site.linkedin_label }} {% include pijl.html richting="uit" %}</a>
+        </div>
+      </section>
+
+    </main>
+    {%- include footer.html %}
+    <script src="{{ '/assets/js/accordeon.js' | relative_url }}" defer></script>
+  </body>
+</html>

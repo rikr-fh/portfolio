@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  {%- include head.html %}
+  <body>
+    {%- include header.html %}
+    <main id="inhoud" class="wrap leeg">
+      <p class="label">{{ page.label }}</p>
+      <h1 class="kop-groot">{{ page.kop }}</h1>
+      <p class="tekst">{{ page.tekst }}</p>
+      <a class="knop knop--eerste" href="{{ '/' | relative_url }}">{{ page.knop }}</a>
+      {{ content }}
+    </main>
+    {%- include footer.html %}
+  </body>
+</html>
