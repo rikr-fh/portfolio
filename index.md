@@ -18,7 +18,7 @@ layout: home
 
 # 1. BOVENAAN ─────────────────────────────────────────────────
 intro:
-  label: Product designer bij Freshheads
+  label: Senior product designer
   tekst: Ik ontwerp digitale producten en diensten die echte problemen oplossen.
   knop: Verbind op LinkedIn
   link: Bekijk ervaring
@@ -46,19 +46,19 @@ over:
 werkwijze:
   - kop: Wat ik doe
     punten:
+      - Gebruikersonderzoek
       - Productstrategie
       - UX- en interactieontwerp
-      - Testbare interactieve prototypes
-  - kop: Hoe ik werk
+  - kop: Hoe ik te werk ga
     punten:
-      - Kort cyclisch, met het team
-      - Eerst begrijpen, dan tekenen
-      - Soms als coach van agile teams
-  - kop: Waar ik op let
+      - Onderzoekend
+      - Iteratief
+      - Resultaatgedreven
+  - kop: Waar ik op inzet
     punten:
-      - Zo min mogelijk stappen
+      - Ontdekken van de vraag achter de vraag
+      - Het speelveld van 
       - Vooraf zeggen wat er gebeurt
-      - Achteraf bevestigen dat het lukte
 
 
 # 4. ERVARING (nieuwste bovenaan) ─────────────────────────────
