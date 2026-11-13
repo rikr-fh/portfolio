@@ -190,3 +190,8 @@ img { display: block; max-width: 100%; height: auto; }
   :root { --balk: 64px; }
   .kopbalk__knop { display: none; }
 }
+
+/* ── Merken (logo's boven het contactblok) ──────────────── */
+.merken { text-align: center; }
+.merken__lijst { margin-top: 24px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 32px 64px; }
+.merken__lijst img { display: block; width: auto; max-width: 160px; filter: grayscale(1); opacity: .85; }
