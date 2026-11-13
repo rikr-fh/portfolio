@@ -87,6 +87,17 @@
         </div>
       </section>
 
+      {%- if page.merken.logos %}
+      <section class="wrap sectie merken" aria-labelledby="merken-kop">
+        <h2 class="label" id="merken-kop">{{ page.merken.kop }}</h2>
+        <ul class="merken__lijst">
+          {%- for logo in page.merken.logos %}
+          <li><img src="{{ logo.bestand | relative_url }}" alt="{{ logo.naam }}" style="height: {{ logo.hoogte | default: 24 }}px"></li>
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endif %}
+
       <section class="wrap sectie" aria-labelledby="contact-kop">
         <div class="contact">
           <div>
