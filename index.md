@@ -109,7 +109,24 @@ achtergrond:
       - Apparatus for implementing a clinical protocol (Philips, 2019)
 
 
-# 6. CONTACT (donker blok onderaan) ───────────────────────────
+# 6. MERKEN (logo's boven het contactblok) ─────────────────────
+# Logo's staan in de map assets/img/merken, als grijs SVG-bestand.
+# "hoogte" is in pixels: maak een logo hoger of lager tot ze even zwaar ogen.
+merken:
+  kop: Ik ontwierp onder meer voor
+  logos:
+    - naam: Philips
+      bestand: /assets/img/merken/philips.svg
+      hoogte: 22
+    - naam: Gazelle
+      bestand: /assets/img/merken/gazelle.svg
+      hoogte: 22
+    - naam: Jumbo
+      bestand: /assets/img/merken/jumbo.svg
+      hoogte: 32
+
+
+# 7. CONTACT (donker blok onderaan) ───────────────────────────
 contact:
   label: Contact
   kop: Tijd voor een praatje?
